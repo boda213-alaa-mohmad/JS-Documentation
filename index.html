@@ -23,7 +23,7 @@
                 <li><a href="#Hello_world" class="nav-link">Hello world</a></li>
                 <li><a href="#Variables" class="nav-link">Variables</a></li>
                 <li><a href="#Variable_scope" class="nav-link">Variable scope</a></li>
-                <li><a href="#Declaring_variabless" class="nav-link">Declaring variables</a></li>
+                <li><a href="#Declaring_variables" class="nav-link">Declaring variables</a></li>
                 <li><a href="#Global_variables" class="nav-link">Global variables</a></li>
                 <li><a href="#Constants" class="nav-link">Constants</a></li>
                 <li><a href="#Data_types" class="nav-link">Data types</a></li>
@@ -186,8 +186,56 @@
                     <p>Consequently, you can access global variables declared in one window or frame from another window or frame by specifying the window or frame name. For example, if a variable called phoneNumber is declared in a document, you can refer to this variable from an iframe as parent.phoneNumber.</p>
                 </article>
             </section>
-            <section id="Constants" class="main-section"></section>
+            
+            <section id="Constants" class="main-section">
+                <header>
+                    <h2>Constants</h2>
+                </header>
+                <article>
+                    <p>You can create a read-only, named
+                         constant with the const keyword. 
+                         The syntax of a constant identifier 
+                         is the same as for a variable identifier: 
+                         it must start with a letter, underscore or 
+                         dollar sign and can contain alphabetic,
+                         numeric, or underscore characters.
+                    </p>
+                    <code>const PI = 3.14;</code>
+                </article>
+                <article>
+                    <p>A constant cannot change value through
+                        assignment or be re-declared while the script is running.
+                        It has to be initialized to a value.
+                    </p>
+                    <p>
+                        The scope rules for constants are
+                         the same as those for let block scope variables. 
+                         If the const keyword is omitted, the identifier is
+                         assumed to represent a variable. 
+                    </p>
+                    
+                    <p>
+                        You cannot declare a constant
+                         with the same name as a function or variable 
+                        in the same scope. For example:
+                    </p>                    
+                </article>
+                <code>// THIS WILL CAUSE AN ERROR function f() {}; const f = 5; // THIS
+                    WILL CAUSE AN ERROR ALSO function f() { const g = 5; var g;
+                    //statements }
+                </code>
+                <article>
+                    <p>However, object attributes are not protected, so the following statement is executed without problems.</p>
+                </article>
+                <code>const MY_OBJECT = {"key": "value"}; MY_OBJECT.key =
+                    "otherValue";</code>
+            </section>
+
+
             <section id="Data_types" class="main-section"></section>
+            
+            
+            
             <section id="if...else_statement" class="main-section"></section>
             <section id="while_statemen" class="main-section"></section>
             <section id="Function_declarations" class="main-section"></section>
